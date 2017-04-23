@@ -1,0 +1,20 @@
+{
+  "name": "friends",
+  "version": "1.0.0",
+  "description": "Friend finder app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/PatrickPowers777/Friends.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PatrickPowers777/Friends/issues"
+  },
+  "homepage": "https://github.com/PatrickPowers777/Friends#readme"
+}
