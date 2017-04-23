@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/PatrickPowers777/Friends/issues"
   },
-  "homepage": "https://github.com/PatrickPowers777/Friends#readme"
+  "homepage": "https://github.com/PatrickPowers777/Friends#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "path": "^0.12.7"
+  }
 }

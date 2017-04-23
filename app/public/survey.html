@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reservation Page</title>
+
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../style.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+  <div class="container">
+
+    <h2>FindDate App</h2>
+
+    <h3>Just enter your name/photo and answer a few questions.</h3>
+	
+	<p>What is your name: (Required)</p>
+    <input type="text" id="name" placeholder = "Enter your name" class ="form-control" required>
+	<p>What is your photo URL: (Required)</p>
+	<input type="text" id="photo" placeholder="Enter your photo URL" class = "form-control" required>
+
+	<h3>Please answer our questionnaire</h3>
+
+	<hr>
+	<br>
+	<h4><strong>1. You believe that everything happens for a reason: </strong></h4>
+	<select data-placeholder="" id="q1" class="chosen-select">
+		<option value=""></option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+
+	<h4><strong>2. You would like to visit Europe one day: </strong></h4>
+	<select data-placeholder="" id="q1" class="chosen-select">
+		<option value=""></option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+	
+	<h4><strong>3. You believe in love at first sight: </strong></h4>
+	<select data-placeholder="" id="q1" class="chosen-select">
+		<option value=""></option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+
+	<h4><strong>4. You like classical music: </strong></h4>
+	<select data-placeholder="" id="q1" class="chosen-select">
+		<option value=""></option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+
+	<h4><strong>5. You like to read: </strong></h4>
+	<select data-placeholder="" id="q1" class="chosen-select">
+		<option value=""></option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+
+	<h4><strong>6. You believe in the idea of a soul mate: </strong></h4>
+	<select data-placeholder="" id="q1" class="chosen-select">
+		<option value=""></option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+
+	<h4><strong>7. You like exercise: </strong></h4>
+	<select data-placeholder="" id="q1" class="chosen-select">
+		<option value=""></option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+
+	<h4><strong>8. You aspire to leadership in a particular career path: </strong></h4>
+	<select data-placeholder="" id="q1" class="chosen-select">
+		<option value=""></option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+
+	<h4><strong>9. You keep up with social media: </strong></h4>
+	<select data-placeholder="" id="q1" class="chosen-select">
+		<option value=""></option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+
+	<h4><strong>10. You like Donald Trump: </strong></h4>
+	<select data-placeholder="" id="q1" class="chosen-select">
+		<option value=""></option>
+		<option value="1">1 (Strongly Disagree)</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5 (Strongly Agree)</option>
+	</select>
+
+	<br>
+	<br>
+	
+	<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle"></i>Submit</button>
+	<br>
+	<br>
+
+  </div>
+
+
+
+</body>
+</html>
+
+<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
+<script type="text/javascript">
+</script>

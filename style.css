@@ -1,0 +1,28 @@
+.form-control {
+	width: 600px;
+}
+
+.btn-block {
+	width: 600px;
+	margin: 0 auto;
+}
+
+#head{
+	text-align: center;
+}
+
+#line1 {
+	text-align: center;
+}
+
+#line2{
+	text-align: center;
+}
+
+#app{
+	text-align: center;
+}
+
+.btn-group-lg>.btn, .btn-lg {
+	padding: 10px 10px 16px;
+}

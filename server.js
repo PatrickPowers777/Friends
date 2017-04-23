@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+var path = require("path");
 var bodyParser = require("body-parser");
 var PORT = process.env.PORT || 8080
 
@@ -17,8 +18,8 @@ app.use(bodyParser.raw({ type: 'application/vnd.custom-type' }))
 // parse an HTML body into a string 
 app.use(bodyParser.text({ type: 'text/html' }))
 
+require("./app/routing/html-routes.js") (app);
+
 app.listen(PORT, function(){
 	console.log("Server listening on " + PORT)
 })
-
-require(".app/routing/routes.js") (app);
