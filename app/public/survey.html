@@ -39,7 +39,7 @@
 	</select>
 
 	<h4><strong>2. You would like to visit Europe one day: </strong></h4>
-	<select data-placeholder="" id="q1" class="chosen-select">
+	<select data-placeholder="" id="q2" class="chosen-select">
 		<option value=""></option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2</option>
@@ -49,7 +49,7 @@
 	</select>
 	
 	<h4><strong>3. You believe in love at first sight: </strong></h4>
-	<select data-placeholder="" id="q1" class="chosen-select">
+	<select data-placeholder="" id="q3" class="chosen-select">
 		<option value=""></option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2</option>
@@ -59,7 +59,7 @@
 	</select>
 
 	<h4><strong>4. You like classical music: </strong></h4>
-	<select data-placeholder="" id="q1" class="chosen-select">
+	<select data-placeholder="" id="q4" class="chosen-select">
 		<option value=""></option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2</option>
@@ -69,7 +69,7 @@
 	</select>
 
 	<h4><strong>5. You like to read: </strong></h4>
-	<select data-placeholder="" id="q1" class="chosen-select">
+	<select data-placeholder="" id="q5" class="chosen-select">
 		<option value=""></option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2</option>
@@ -79,7 +79,7 @@
 	</select>
 
 	<h4><strong>6. You believe in the idea of a soul mate: </strong></h4>
-	<select data-placeholder="" id="q1" class="chosen-select">
+	<select data-placeholder="" id="q6" class="chosen-select">
 		<option value=""></option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2</option>
@@ -89,7 +89,7 @@
 	</select>
 
 	<h4><strong>7. You like exercise: </strong></h4>
-	<select data-placeholder="" id="q1" class="chosen-select">
+	<select data-placeholder="" id="q7" class="chosen-select">
 		<option value=""></option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2</option>
@@ -99,7 +99,7 @@
 	</select>
 
 	<h4><strong>8. You aspire to leadership in a particular career path: </strong></h4>
-	<select data-placeholder="" id="q1" class="chosen-select">
+	<select data-placeholder="" id="q8" class="chosen-select">
 		<option value=""></option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2</option>
@@ -109,7 +109,7 @@
 	</select>
 
 	<h4><strong>9. You keep up with social media: </strong></h4>
-	<select data-placeholder="" id="q1" class="chosen-select">
+	<select data-placeholder="" id="q9" class="chosen-select">
 		<option value=""></option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2</option>
@@ -119,7 +119,7 @@
 	</select>
 
 	<h4><strong>10. You like Donald Trump: </strong></h4>
-	<select data-placeholder="" id="q1" class="chosen-select">
+	<select data-placeholder="" id="q10" class="chosen-select">
 		<option value=""></option>
 		<option value="1">1 (Strongly Disagree)</option>
 		<option value="2">2</option>
@@ -137,11 +137,84 @@
 
   </div>
 
+	<div id ="myModal" class="modal fade" role="dialogue">
+		<div class="modal-dialog">
+			
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h2 class="modal-title"><strong>Best Match:</strong></h2>
+			</div>
+			<div class="modal-body">
+				<h2 id ="matchName"></h2>
+				<img id ="matchPhoto" src="" alt="Best Match">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+			</div>		
 
+		</div>	
+
+		</div>
+	</div>
 
 </body>
 </html>
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
+
+$("#submit").on("click", function(){
+
+	function validateForm(){
+		var isValid = true;
+		$(".form-control").each(function(){
+			if($(this).val = "") {
+				isValid = false;
+			}
+		});
+
+		$(".chosen-select").each(function(){
+			if($(this).val = "") {
+				isValid = false;
+			}
+		});
+
+		return isValid;
+
+	}
+
+	if(validateForm()) {
+
+
+		var userData = {
+			name: $("#name").val(),
+			photo: $("#photo").val(),
+			scores: [
+			$("#q1").val(),
+			$("#q2").val(),
+			$("#q3").val(),
+			$("#q4").val(),
+			$("#q5").val(),
+			$("#q6").val(),
+			$("#q7").val(),
+			$("#q8").val(),
+			$("#q9").val(),
+			$("#q10").val(),
+
+			]
+		};
+
+		var currentURL = window.location.origin;
+
+		$.post(currentURL + "/api/friends", userData, function(data) {
+
+			$("#matchName").text(data.name);
+			$("#matchPhoto").attr("src", data.photo);
+
+			$("#myModal").modal("toggle");
+		})
+	}
+
+})
 </script>

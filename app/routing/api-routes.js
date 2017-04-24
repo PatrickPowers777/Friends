@@ -23,6 +23,8 @@ module.exports = function(app){
 
 		var totalDiff = 0;
 
+		//nested for loop, to both run through the friends array, as well 
+		//as the difference in the scores between them.
 		for(i = 0; i < friends.length; i++){
 			console.log(friends[i]);
 			totalDiff = 0;
@@ -41,5 +43,7 @@ module.exports = function(app){
 		}
 
 		friends.push(userData);
+
+		res.json(bestMatch);
 	})
 }
